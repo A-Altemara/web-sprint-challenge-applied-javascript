@@ -17,7 +17,35 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const card = document.createElement('div')
+  card.classList.add('card')
+  const headLine = document.createElement('div')
+  headLine.classList.add('headline')
+  const author = document.createElement('div')
+  author.classList.add('author')
+  const imgContainer = document.createElement('div')
+  imgContainer.classList.add("img-container")
+  const authImg = document.createElement('img')
+  const authName = document.createElement('span')
+
+  card.appendChild(headLine)
+  card.appendChild(author)
+  author.appendChild(imgContainer)
+  imgContainer.appendChild(authImg)
+  author.appendChild(authName)
+
+  console.log('test')
+
+
 }
+const test = {
+  headline: 'foo', 
+  authorPhoto: "https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg",
+  authorName: 'bar'
+}
+
+Card(test)
+
 
 const cardAppender = (selector) => {
   // TASK 6
