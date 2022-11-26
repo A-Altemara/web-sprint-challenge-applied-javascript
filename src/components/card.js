@@ -19,8 +19,8 @@ const Card = (article) => {
   //
   const card = document.createElement('div')
   card.classList.add('card')
-  const headLine = document.createElement('div')
-  headLine.classList.add('headline')
+  const authHeadLine = document.createElement('div')
+  authHeadLine.classList.add('headline')
   const author = document.createElement('div')
   author.classList.add('author')
   const imgContainer = document.createElement('div')
@@ -28,20 +28,34 @@ const Card = (article) => {
   const authImg = document.createElement('img')
   const authName = document.createElement('span')
 
-  card.appendChild(headLine)
+  card.appendChild(authHeadLine)
   card.appendChild(author)
   author.appendChild(imgContainer)
   imgContainer.appendChild(authImg)
   author.appendChild(authName)
 
-  console.log('test')
+  authHeadLine.textContent = article.headline
+  authImg.src = article.authorPhoto
+  author.textContent = article.authorName
 
+
+
+  console.log('test')
+  const cardsContainer = document.querySelector('.cards-container')
+  cardsContainer.appendChild(card)
+
+  card.addEventListener('click', () => {
+    console.log(article.headline)
+  })
+
+
+  return card
 
 }
 const test = {
-  headline: 'foo', 
-  authorPhoto: "https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg",
-  authorName: 'bar'
+  headline: "foo", 
+  authorPhoto: "https://images.dog.ceo/breeds/affenpinscher/n02110627_10787.jpg",
+  authorName: "bar"
 }
 
 Card(test)
@@ -56,6 +70,9 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const cardsContainer = document.querySelector('.cards-container')
+
+
 }
 
 export { Card, cardAppender }
