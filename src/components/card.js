@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -36,13 +38,12 @@ const Card = (article) => {
 
   authHeadLine.textContent = article.headline
   authImg.src = article.authorPhoto
-  author.textContent = article.authorName
+  author.textContent = `By ${article.authorName}`
 
 
-
-  console.log('test')
-  const cardsContainer = document.querySelector('.cards-container')
-  cardsContainer.appendChild(card)
+  // console.log('test')
+  // const cardsContainer = document.querySelector('.cards-container')
+  // cardsContainer.append(card)
 
   card.addEventListener('click', () => {
     console.log(article.headline)
@@ -53,7 +54,7 @@ const Card = (article) => {
 
 }
 const test = {
-  headline: "foo", 
+  headline: "foo",
   authorPhoto: "https://images.dog.ceo/breeds/affenpinscher/n02110627_10787.jpg",
   authorName: "bar"
 }
@@ -73,6 +74,20 @@ const cardAppender = (selector) => {
   const cardsContainer = document.querySelector('.cards-container')
 
 
+  axios.get('http://localhost:5001/api/articles')
+    .then(res => {
+      console.log(res)
+      // response is an object of arrays, will need to loop through each array to build all of the articles
+      for (let key in res.data.articles) {
+        console.log(key)
+        console.log(res.data.articles[key])
+        res.data.articles[key].forEach(article => {
+          const newCard = Card(article)
+          cardsContainer.appendChild(newCard)
+        });
+      }
+    });
+    
 }
 
 export { Card, cardAppender }
