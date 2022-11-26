@@ -38,12 +38,8 @@ const Card = (article) => {
 
   authHeadLine.textContent = article.headline
   authImg.src = article.authorPhoto
-  author.textContent = `By ${article.authorName}`
+  authName.textContent = `By ${article.authorName}`
 
-
-  // console.log('test')
-  // const cardsContainer = document.querySelector('.cards-container')
-  // cardsContainer.append(card)
 
   card.addEventListener('click', () => {
     console.log(article.headline)
