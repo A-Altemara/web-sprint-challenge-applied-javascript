@@ -37,7 +37,6 @@ const headerAppender = (selector) => {
   
   const topBar = document.querySelector(`${selector}`)
   topBar.append(Header('foo', 'bar', 'bat'))
-  console.log('test')
 
   // TASK 2
   // ---------------------
