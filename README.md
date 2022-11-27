@@ -35,9 +35,9 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 **Steps Required for MVP:**
 
-- [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
-- [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
-- [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
+- [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
+- [x] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
+- [x] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
 **Important Notes:**
 
@@ -50,15 +50,15 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
-- [ ] Check Codegrade for automated feedback.
+- [x] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
+- [x] Check Codegrade for automated feedback.
 
 ## Stretch Interview Questions
 
 Demonstrate your understanding of this sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-1. What is the DOM?
-2. What is an event?
-3. What is an event listener?
-4. Why would we convert a NodeList into an Array?
-5. What is a component?
+1. What is the DOM? The dom is the Document Object Model, and what all modern websites are build on. It is where all objects are housed and minuplated.
+2. What is an event? An event is triggered thing that can be watched for; anything from a mouse click, keybard press, to load or unloading of a window.
+3. What is an event listener? this is a special function that listens for a specific even and then executes the function associated with the event.
+4. Why would we convert a NodeList into an Array? We would convert a Nodelist to an Array so that we have more methods we can use to manipulate the array, as a nodelist really only has forEach.
+5. What is a component?  A component is a modular block element of a larger program. It should be reusable, DRY, and stand on its own as much as possible. They are generally HTML, CSS and Javascript.

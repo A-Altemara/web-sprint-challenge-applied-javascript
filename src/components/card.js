@@ -48,13 +48,7 @@ const Card = (article) => {
   return card
 
 }
-const test = {
-  headline: "foo",
-  authorPhoto: "https://images.dog.ceo/breeds/affenpinscher/n02110627_10787.jpg",
-  authorName: "bar"
-}
 
-Card(test)
 
 
 const cardAppender = (selector) => {
@@ -72,10 +66,7 @@ const cardAppender = (selector) => {
   axios.get('http://localhost:5001/api/articles')
     .then(res => {
       console.log(res)
-      // response is an object of arrays, will need to loop through each array to build all of the articles
       for (let key in res.data.articles) {
-        console.log(key)
-        console.log(res.data.articles[key])
         res.data.articles[key].forEach(article => {
           const newCard = Card(article)
           cardsContainer.appendChild(newCard)
